@@ -104,13 +104,14 @@
   
      ```sql
      delete from user where username = #{username}
-   ```
+     ```
+  
   
 3. 用户修改
   
      ``` sql
      update user set username = #{newName} where username = #{oldName}
-   
+      
      update user set password = #{password} where username = #{username}
    ```
   
@@ -118,6 +119,7 @@
   
      ```sql
      select * from userinfoview where username = #{username}
+     ```
    ```
   
   5. 用户登录
@@ -125,19 +127,19 @@
    ```sql
      select * from user where (username = #{username} and password = #{password})
    ```
-     
+
   6. 用户角色添加
-  
+
    ```sql
      insert into purview (name) values (#{name})
-     ```
-  
+   ```
+
   7. 用户角色名称修改
   
      ```sql
      update purview set name = #{newName} where name = #{oldName}
      ```
-  
+
 - 图书管理
   1. 图书添加
   
@@ -226,51 +228,51 @@
 
   http://localhost:8088/signIn?username=admin&password=admin&email=admin@qq.com&purview_id=2
 
-  ![image-20210118143631863](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118143631863.png)
+  ![image-20210118143631863](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118143631863.png)
 
 - 用户删除
 
   http://localhost:8088/deleteUser?username=123123&password=123123
 
-  ![image-20210118143707134](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118143707134.png)
+  ![image-20210118143707134](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118143707134.png)
 
 - 用户修改
 
   http://localhost:8088/updatePassword?username=admin&oldPassword=admin&newPassword=123
 
-  ![image-20210118143909617](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118143909617.png)
+  ![image-20210118143909617](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118143909617.png)
 
 - 用户查询
 
   http://localhost:8088/getUserInfo?username=123
 
-  ![image-20210118173402254](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118173402254.png)
+  ![image-20210118173402254](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118173402254.png)
 
 - 用户登录
 
   http://localhost:8088/login?username=123&password=123
   
-  ![image-20210118143950281](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118143950281.png)
+  ![image-20210118143950281](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118143950281.png)
 
 
 - 用户角色添加
 
   http://localhost:8088/addPurview?purviewName=%E8%AF%BB%E8%80%85
 
-  ![image-20210118152019018](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118152019018.png)
+  ![image-20210118152019018](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118152019018.png)
 
 - 用户角色修改
 
   http://localhost:8088/updatePurview?oldPurViewName=%E8%AF%BB%E8%80%851&newPurViewName=%E8%AF%BB%E8%80%85
 
-  ![image-20210118153142838](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118153142838.png)
+  ![image-20210118153142838](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118153142838.png)
 
 
 - 图书添加
 
   http://localhost:8088/addBook?title=%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88&author=%E4%BD%9A%E5%90%8D&ISBN=1209878075&category_id=1&present=%E6%9F%90%E6%9F%90%E6%9F%90%E5%87%BA%E7%89%88%E7%A4%BE&pub_year=2021&language=%E4%B8%AD%E6%96%87&leftAmount=10
 
-  ![image-20210118155511286](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118155511286.png)
+  ![image-20210118155511286](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118155511286.png)
 
 - 图书删除
 
@@ -280,7 +282,7 @@
 
   http://localhost:8088/queryBook?ISBN=1209878075
 
-  ![image-20210118173929429](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118173929429.png)
+  ![image-20210118173929429](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118173929429.png)
 
 - 图书分类添加
 
@@ -290,24 +292,24 @@
 
   http://localhost:8088/getCard?username=123
 
-  ![image-20210118172455485](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118172455485.png)
+  ![image-20210118172455485](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118172455485.png)
 
-  ![image-20210118172534689](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118172534689.png)
+  ![image-20210118172534689](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118172534689.png)
 
 
 - 新增借阅
 
   http://localhost:8088/addBorrow?borrow_user_id=3&borrow_book_id=1
 
-  ![image-20210118163656111](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118163656111.png)
+  ![image-20210118163656111](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118163656111.png)
 
 - 图书归还
 
   http://localhost:8088/returnBook?borrow_id=8
 
-  ![image-20210118165911442](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118165911442.png)
+  ![image-20210118165911442](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118165911442.png)
 
-  ![image-20210118165934043](C:\Users\Michael\AppData\Roaming\Typora\typora-user-images\image-20210118165934043.png)
+  ![image-20210118165934043](E:\桌面\近期任务\实验与课程设计\数据库课程设计\img\image-20210118165934043.png)
 
 <u>1）用户注册、登录、删除、修改操作</u>
 
